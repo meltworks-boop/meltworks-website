@@ -232,6 +232,81 @@ p { margin: 0; }
 .step h3 { margin-bottom: 10px; }
 .step p { font-size: 15px; opacity: .72; }
 
+/* Step art: one medium per step. Each element's resting style is its finished
+   state; the animation only supplies the "before", so reduced motion shows the end. */
+.step-art { display: block; width: 100%; max-width: 220px; height: auto; margin: -28px 0 20px; overflow: visible; }
+.step:nth-child(2) .step-art { --lag: .6s; }
+.step:nth-child(3) .step-art { --lag: 1.2s; }
+.step:nth-child(4) .step-art { --lag: 1.8s; }
+.step-art .a-draw { stroke-dasharray: 1 1; }
+.step-art :is(.a-grow, .a-fold, .a-slap) { transform-box: fill-box; }
+.step.is-in .step-art [class*="a-"] {
+  animation: var(--anim) var(--d, .5s) var(--fn, ease-out) calc(var(--t, 0s) + .5s + var(--lag, 0s)) both;
+}
+.step-art .a-draw   { --anim: art-draw; }
+.step-art .a-pop    { --anim: art-pop; }
+.step-art .a-grow   { --anim: art-grow; transform-origin: top; }
+.step-art .a-select { --anim: art-select; }
+.step-art .a-slide  { --anim: art-slide; }
+.step-art .a-rise   { --anim: art-rise; }
+.step-art .a-fold   { --anim: art-fold; --fn: cubic-bezier(.5, 0, .3, 1); }
+.step-art .a-slap   { --anim: art-slap; --fn: cubic-bezier(.3, 1.5, .5, 1); transform-origin: center; }
+@keyframes art-draw   { 0% { stroke-dashoffset: 1; visibility: hidden; } 1% { visibility: visible; } 100% { stroke-dashoffset: 0; } }
+@keyframes art-pop    { from { opacity: 0; } }
+@keyframes art-grow   { from { transform: scaleY(0); } }
+@keyframes art-select { from { stroke: var(--cad-ink); } }
+@keyframes art-slide  { from { transform: translateY(58px); } }
+@keyframes art-rise   { from { opacity: 0; transform: translateY(10px); } }
+@keyframes art-fold   { 0%, 45% { transform: scaleY(-2.4); } }
+@keyframes art-slap   { from { opacity: 0; transform: scale(1.5) rotate(-8deg); } }
+
+/* 01 Sketch: 6B pencil, Procreate timelapse */
+.art-pencil .pencil { filter: url(#pencil-6b); }
+.art-pencil path { fill: none; stroke: #2f2b29; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; opacity: .88; --fn: steps(9, end); }
+.art-pencil .soft  { stroke-width: 1.7; opacity: .6; }
+.art-pencil .hatch { stroke-width: 1.3; opacity: .5; }
+.art-pencil .guide { stroke-width: .9;  opacity: .22; }
+
+/* 02 Model: Revit-style {3D} view, crisp vector linework */
+.art-cad { --cad-ink: #24323c; --cad-select: #2b7bd6; fill: none; stroke: var(--cad-ink); stroke-width: 1; stroke-linecap: square; }
+.art-cad .a-draw { --fn: linear; }
+.art-cad text { fill: var(--cad-ink); stroke: none; font: 7px Arial, Helvetica, sans-serif; }
+.art-cad .tag { fill: #6d7a84; }
+.art-cad .grid { stroke-width: .6; stroke-dasharray: 12 3 2 3; }
+.art-cad circle { stroke-width: .7; }
+.art-cad .cube { stroke: #8a959d; stroke-width: .6; }
+.art-cad .cube path:first-child { fill: #e3e9ee; }
+.art-cad .cube text { font-size: 3.6px; fill: #6d7a84; }
+.art-cad .a-select { stroke: var(--cad-select); }
+.art-cad .fine { stroke-width: .5; }
+.art-cad .thin { stroke-width: .5; stroke: var(--cad-ink); }
+.art-cad .tick { stroke-width: 1.5; }
+.art-cad .grips { fill: var(--cad-select); stroke: #fff; stroke-width: .6; }
+
+/* 03 Melt: slicer preview, layers stack bottom-up */
+.art-slice .plate { fill: #e4e3df; stroke: #cbc9c3; stroke-width: .6; }
+.art-slice .plate-grid { fill: none; stroke: #d4d2cc; stroke-width: .5; }
+.art-slice .wall { fill: #e8833f; stroke: #b75d24; stroke-width: .5; }
+.art-slice .inner { fill: #e8833f; stroke: #4f9e62; stroke-width: 1.3; }
+.art-slice .infill { fill: none; stroke: #e7c64a; stroke-width: .8; }
+.art-slice .coral { fill: #f0a66d; stroke: #b75d24; stroke-width: .5; }
+.art-slice .travel { fill: none; stroke: #4a8fd6; stroke-width: .6; stroke-dasharray: 2 2; }
+.art-slice .track { stroke: #cfcdc7; stroke-width: 2; stroke-linecap: round; }
+.art-slice .handle { fill: #2b2522; --fn: steps(var(--n, 17), end); }
+
+/* 04 Finish: flat kraft-paper box, folded, taped and labelled */
+.art-box { stroke: #6b4a2b; stroke-width: 1.2; stroke-linejoin: round; }
+.art-box .shadow { fill: rgba(0, 0, 0, .08); stroke: none; }
+.art-box .front { fill: #d6a86f; }
+.art-box .side { fill: #b98850; }
+.art-box .flap-back { fill: #e4bb83; transform-origin: top; }
+.art-box .flap-front { fill: #ddb077; transform-origin: bottom; }
+.art-box .box-tape { fill: none; stroke: var(--tape); stroke-width: 6; stroke-linecap: butt; stroke-linejoin: miter; }
+.art-box .label rect { fill: #fbfaf6; stroke-width: .8; }
+.art-box .label path { fill: none; stroke-width: .8; }
+.art-box .label .check { stroke: #2b2522; stroke-width: 1.3; stroke-linecap: round; }
+.art-box .arrows { fill: none; stroke-linecap: round; }
+
 /* ---------- Split / story ---------- */
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 @media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }

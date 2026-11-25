@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=14">
+<link rel="stylesheet" href="css/style.css?v=15">
 </head>
 <body>
 <header class="site-header">
@@ -107,10 +107,107 @@
       <p class="lede">Every piece moves through the same four steps.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><h3>Sketch</h3><p>An everyday object, a memory or a problem worth solving becomes a drawing.</p></div>
-      <div class="step reveal"><h3>Model</h3><p>The form is built and refined in 3D until the proportions feel right.</p></div>
-      <div class="step reveal"><h3>Melt</h3><p>Filament is melted and laid down, layer by layer, into the final shape.</p></div>
-      <div class="step reveal"><h3>Finish</h3><p>Each piece is checked, cleaned up and packed by hand.</p></div>
+      <div class="step reveal">
+        <svg class="step-art art-pencil" viewBox="0 0 220 150" aria-hidden="true">
+          <defs>
+            <filter id="pencil-6b" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="wobble"/>
+              <feDisplacementMap in="SourceGraphic" in2="wobble" scale="2.2" xChannelSelector="R" yChannelSelector="G" result="line"/>
+              <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="1" seed="9" result="tooth"/>
+              <feColorMatrix in="tooth" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.75" result="grain"/>
+              <feComposite in="line" in2="grain" operator="in"/>
+            </filter>
+          </defs>
+          <g class="pencil">
+            <path pathLength="1" class="a-draw guide" style="--t:0s;--d:0.4s" d="M110 6 L110 144"/>
+            <path pathLength="1" class="a-draw guide" style="--t:0.35s;--d:0.45s" d="M14 140 C70 138 150 141 206 139"/>
+            <path pathLength="1" class="a-draw" style="--t:0.95s;--d:0.6s" d="M60 27 C60 19 160 17 162 26 C163 34 62 36 57 26.5"/>
+            <path pathLength="1" class="a-draw soft" style="--t:1.6s;--d:0.3s" d="M69 27 C76 22 145 21 153 27"/>
+            <path pathLength="1" class="a-draw" style="--t:1.95s;--d:0.35s" d="M60 28 C66 33 70 38 72 44 L81 93"/>
+            <path pathLength="1" class="a-draw" style="--t:2.35s;--d:0.35s" d="M162 27 C156 33 151 38 149 44 L140 93"/>
+            <path pathLength="1" class="a-draw" style="--t:2.85s;--d:0.5s" d="M30 85 C32 96 188 97 190 84"/>
+            <path pathLength="1" class="a-draw" style="--t:3.4s;--d:0.22s" d="M30 85 C31 77 55 73 77 72"/>
+            <path pathLength="1" class="a-draw" style="--t:3.65s;--d:0.22s" d="M143 72 C165 73 189 77 190 84"/>
+            <path pathLength="1" class="a-draw soft" style="--t:3.95s;--d:0.4s" d="M46 88 C52 97 168 97 174 88"/>
+            <path pathLength="1" class="a-draw" style="--t:4.45s;--d:0.65s" d="M40 92 C41 108 42 122 44 132 C60 142 160 142 176 132 C178 122 179 108 180 92"/>
+            <path pathLength="1" class="a-draw hatch" style="--t:5.25s;--d:0.55s" d="M132 54 L140 48 M131 62 L144 53 M131 70 L146 60 M132 78 L145 69 M134 86 L144 79"/>
+            <path pathLength="1" class="a-draw hatch" style="--t:5.85s;--d:0.5s" d="M156 104 L170 96 M154 114 L172 104 M155 124 L173 113 M160 132 L174 123"/>
+            <path pathLength="1" class="a-draw hatch" style="--t:6.4s;--d:0.4s" d="M150 141 C170 140 190 141 204 140 M162 145 C178 144 192 145 200 144"/>
+          </g>
+        </svg>
+        <h3>Sketch</h3><p>An everyday object, a memory or a problem worth solving becomes a drawing.</p></div>
+      <div class="step reveal">
+        <svg class="step-art art-cad" viewBox="0 0 220 150" aria-hidden="true">
+          <text class="a-pop tag" style="--t:0s;--d:0.3s" x="2" y="9">{3D}</text>
+          <path class="a-grow grid" style="--t:0.15s;--d:0.6s" d="M100 17 L100 108"/>
+          <g class="a-pop" style="--t:0.7s;--d:0.2s"><circle cx="100" cy="10" r="7"/><text x="100" y="12.6" text-anchor="middle">A</text></g>
+          <g class="a-pop cube" style="--t:0.85s;--d:0.25s"><path d="M184 16 L194 11 L204 16 L194 21 Z"/><path d="M184 16 L184 27 L194 32 L194 21 M204 16 L204 27 L194 32"/><text x="194" y="17.4" text-anchor="middle">TOP</text></g>
+          <g class="a-select" style="--t:3.4s;--d:0.25s">
+            <path pathLength="1" class="a-draw" style="--t:1.05s;--d:0.7s" d="M38 72 A62 26 0 1 1 162 72 A62 26 0 1 1 38 72"/>
+            <path pathLength="1" class="a-draw" style="--t:1.8s;--d:0.12s" d="M38 72 L38 80"/>
+            <path pathLength="1" class="a-draw" style="--t:1.95s;--d:0.12s" d="M162 72 L162 80"/>
+            <path pathLength="1" class="a-draw" style="--t:2.1s;--d:0.4s" d="M38 80 A62 26 0 0 0 162 80"/>
+            <path pathLength="1" class="a-draw fine" style="--t:2.55s;--d:0.25s" d="M58 62 C74 56 86 68 100 62 C114 56 128 66 142 60"/>
+            <path pathLength="1" class="a-draw fine" style="--t:2.8s;--d:0.25s" d="M50 74 C68 68 82 82 100 74 C118 67 134 80 150 72"/>
+            <path pathLength="1" class="a-draw fine" style="--t:3.05s;--d:0.2s" d="M64 86 C78 81 90 92 104 86 C116 81 128 88 136 86"/>
+          </g>
+          <path pathLength="1" class="a-draw thin" style="--t:2.9s;--d:0.25s" d="M38 84 L38 128 M162 84 L162 128"/>
+          <path pathLength="1" class="a-draw thin" style="--t:3.1s;--d:0.3s" d="M32 122 L168 122"/>
+          <g class="a-pop" style="--t:3.35s;--d:0.15s"><path class="tick" d="M35 125 L41 119 M159 125 L165 119"/><text x="100" y="118" text-anchor="middle">100</text></g>
+          <g class="a-pop grips" style="--t:3.55s;--d:0.15s"><circle cx="38" cy="72" r="2.2"/><circle cx="162" cy="72" r="2.2"/><circle cx="100" cy="46" r="2.2"/><circle cx="100" cy="98" r="2.2"/></g>
+        </svg>
+        <h3>Model</h3><p>The form is built and refined in 3D until the proportions feel right.</p></div>
+      <div class="step reveal">
+        <svg class="step-art art-slice" viewBox="0 0 220 150" aria-hidden="true">
+          <defs><clipPath id="slice-top"><ellipse cx="110" cy="84.4" rx="28" ry="7.4"/></clipPath></defs>
+          <g class="a-pop plate" style="--t:0s;--d:0.3s">
+            <path d="M14 136 L54 110 L198 110 L158 136 Z"/>
+            <path class="plate-grid" d="M45 136 L85 110 M76 136 L116 110 M107 136 L147 110 M138 136 L178 110 M34 123 L178 123"/>
+          </g>
+          <ellipse class="a-pop wall" style="--t:0.4s;--d:0.06s" cx="110" cy="124.0" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:0.57s;--d:0.06s" cx="110" cy="120.4" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:0.74s;--d:0.06s" cx="110" cy="116.8" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:0.91s;--d:0.06s" cx="110" cy="113.2" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:1.08s;--d:0.06s" cx="110" cy="109.6" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:1.25s;--d:0.06s" cx="110" cy="106.0" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:1.42s;--d:0.06s" cx="110" cy="102.4" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:1.59s;--d:0.06s" cx="110" cy="98.8" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:1.76s;--d:0.06s" cx="110" cy="95.2" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:1.93s;--d:0.06s" cx="110" cy="91.6" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:2.1s;--d:0.06s" cx="110" cy="88.0" rx="34" ry="10"/>
+          <ellipse class="a-pop wall" style="--t:2.27s;--d:0.06s" cx="110" cy="84.4" rx="34" ry="10"/>
+          <g class="a-pop" style="--t:2.32s;--d:0.1s">
+            <ellipse class="inner" cx="110" cy="84.4" rx="30" ry="8.2"/>
+            <path class="infill" clip-path="url(#slice-top)" d="M70 72.4 L88 96.4 M88 72.4 L70 96.4 M77 72.4 L95 96.4 M95 72.4 L77 96.4 M84 72.4 L102 96.4 M102 72.4 L84 96.4 M91 72.4 L109 96.4 M109 72.4 L91 96.4 M98 72.4 L116 96.4 M116 72.4 L98 96.4 M105 72.4 L123 96.4 M123 72.4 L105 96.4 M112 72.4 L130 96.4 M130 72.4 L112 96.4 M119 72.4 L137 96.4 M137 72.4 L119 96.4"/>
+          </g>
+          <g class="a-pop coral" style="--t:2.44s;--d:0.06s"><ellipse cx="94.0" cy="80.8" rx="6" ry="2.2"/><ellipse cx="111.0" cy="80.8" rx="6" ry="2.2"/><ellipse cx="125.0" cy="80.8" rx="6" ry="2.2"/></g>
+          <g class="a-pop coral" style="--t:2.61s;--d:0.06s"><ellipse cx="91.4" cy="77.2" rx="6" ry="2.2"/><ellipse cx="111.0" cy="77.2" rx="6" ry="2.2"/><ellipse cx="127.6" cy="77.2" rx="6" ry="2.2"/></g>
+          <g class="a-pop coral" style="--t:2.78s;--d:0.06s"><ellipse cx="88.8" cy="73.6" rx="6" ry="2.2"/><ellipse cx="111.0" cy="73.6" rx="6" ry="2.2"/><ellipse cx="130.2" cy="73.6" rx="6" ry="2.2"/></g>
+          <g class="a-pop coral" style="--t:2.95s;--d:0.06s"><ellipse cx="86.2" cy="70.0" rx="6" ry="2.2"/><ellipse cx="111.0" cy="70.0" rx="6" ry="2.2"/><ellipse cx="132.8" cy="70.0" rx="6" ry="2.2"/></g>
+          <g class="a-pop coral" style="--t:3.12s;--d:0.06s"><ellipse cx="83.6" cy="66.4" rx="6" ry="2.2"/><ellipse cx="111.0" cy="66.4" rx="6" ry="2.2"/><ellipse cx="135.4" cy="66.4" rx="6" ry="2.2"/></g>
+          <path class="a-pop travel" style="--t:3.39s;--d:0.2s" d="M84 58 C96 50 124 50 138 58"/>
+          <path class="track" d="M206 40 L206 126"/>
+          <rect class="a-slide handle" style="--t:.4s;--d:2.89s;--n:17" x="201" y="62" width="10" height="6" rx="2"/>
+        </svg>
+        <h3>Melt</h3><p>Filament is melted and laid down, layer by layer, into the final shape.</p></div>
+      <div class="step reveal">
+        <svg class="step-art art-box" viewBox="0 0 220 150" aria-hidden="true">
+          <ellipse class="a-pop shadow" style="--t:0s;--d:0.4s" cx="108" cy="126" rx="76" ry="6"/>
+          <g class="a-rise" style="--t:0s;--d:0.5s">
+            <path class="front" d="M40 70 L150 70 L150 124 L40 124 Z"/>
+            <path class="side" d="M150 70 L176 54 L176 108 L150 124 Z"/>
+            <path class="a-fold flap-back" style="--t:0s;--d:1.4s" d="M53 62 L163 62 L176 54 L66 54 Z"/>
+            <path class="a-fold flap-front" style="--t:0s;--d:1.9s" d="M40 70 L150 70 L163 62 L53 62 Z"/>
+          </g>
+          <path pathLength="1" class="a-draw box-tape" style="--t:2.45s;--d:0.5s" d="M50 62 L163 62 L163 77"/>
+          <g class="a-slap label" style="--t:3.0s;--d:0.35s">
+            <rect x="58" y="82" width="46" height="28" rx="2"/>
+            <path d="M63 89 L92 89 M63 94 L84 94 M63 99 L88 99 M63 104 L63 107 M65.5 104 L65.5 107 M67 104 L67 107 M70 104 L70 107 M72 104 L72 107 M75 104 L75 107 M76.5 104 L76.5 107"/>
+            <path class="check" d="M90 103 L93.5 106.5 L99 99"/>
+          </g>
+          <path class="a-pop arrows" style="--t:3.45s;--d:0.2s" d="M158 96 L158 85 M155 88 L158 84.5 L161 88 M166 91 L166 80 M163 83 L166 79.5 L169 83"/>
+        </svg>
+        <h3>Finish</h3><p>Each piece is checked, cleaned up and packed by hand.</p></div>
     </div>
   </div>
 </section>
