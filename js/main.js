@@ -39,6 +39,17 @@
     });
   });
 
+  // Product gallery: thumbnails swap the main photo
+  const galleryMain = document.querySelector("[data-gallery-main]");
+  document.querySelectorAll(".gallery-thumb").forEach((t) => {
+    t.addEventListener("click", () => {
+      if (!galleryMain) return;
+      galleryMain.src = t.dataset.src;
+      galleryMain.alt = t.dataset.alt || "";
+      document.querySelectorAll(".gallery-thumb").forEach((x) => x.classList.toggle("is-active", x === t));
+    });
+  });
+
   // Colour swatches on product page
   document.querySelectorAll(".swatch").forEach((s) => {
     s.addEventListener("click", () => {
@@ -63,6 +74,28 @@
     });
   });
   syncTheme();
+
+  // Contact form: send to Formspree without leaving the page
+  document.querySelectorAll("[data-ajax-form]").forEach((form) => {
+    const status = form.querySelector("[data-form-status]");
+    const btn = form.querySelector("button[type=submit]");
+    const say = (msg) => { if (status) { status.textContent = msg; status.hidden = false; } };
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      say("Sending…");
+      try {
+        const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset();
+        say("Thank you — your message is on its way. We'll reply soon.");
+      } catch (err) {
+        say("Sorry, that didn't send. Please try again in a moment.");
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  });
 
   // Footer year
   const y = document.querySelector("[data-year]");
