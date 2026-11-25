@@ -113,6 +113,7 @@ h3 { font-size: clamp(19px, 2vw, 23px); font-weight: 600; letter-spacing: -0.01e
 p { margin: 0; }
 .light { font-weight: 300; }
 .lede { font-size: clamp(18px, 2vw, 22px); font-weight: 300; color: var(--ink-soft); max-width: 36ch; }
+.lede strong { font-weight: 600; }
 .eyebrow {
   font-size: 12px; font-weight: 400; text-transform: lowercase;
   letter-spacing: var(--track-wide); color: var(--muted);
@@ -230,7 +231,6 @@ p { margin: 0; }
   display: block; font-size: 13px; letter-spacing: .2em; margin-bottom: 48px; opacity: .6;
 }
 .step h3 { margin-bottom: 10px; }
-.step p { font-size: 15px; opacity: .72; }
 
 /* Step art: one medium per step. Each element's resting style is its finished
    state; the animation only supplies the "before", so reduced motion shows the end. */
@@ -306,6 +306,7 @@ p { margin: 0; }
 .art-box .label path { fill: none; stroke-width: .8; }
 .art-box .label .check { stroke: #2b2522; stroke-width: 1.3; stroke-linecap: round; }
 .art-box .arrows { fill: none; stroke-linecap: round; }
+.step p { font-size: 15px; opacity: .72; }
 
 /* ---------- Split / story ---------- */
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
@@ -467,3 +468,31 @@ p { margin: 0; }
 .mw-logo__head line   { stroke: var(--ink); stroke-opacity: .18; }
 .mw-logo__head .mw-logo__nozzle { fill: var(--ink-soft); }
 .mw-logo__head circle { fill: var(--accent); filter: drop-shadow(0 0 4px var(--accent)); }
+
+/* Studio collage: taped photo prints, scattered */
+.collage { position: relative; aspect-ratio: 1 / 1.04; }
+.collage .print {
+  position: absolute; left: var(--x); top: var(--y); width: var(--w); margin: 0; z-index: calc(var(--i) + 1);
+  padding: 6px; background: var(--sticker-paper); border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 12px 28px rgba(0,0,0,.35);
+  opacity: 0; transform: translateY(18px) rotate(calc(var(--r) * 2)) scale(.96);
+  transition: opacity .7s var(--ease), transform .9s var(--ease), box-shadow .4s var(--ease);
+  transition-delay: calc(.15s + var(--i) * 90ms);
+}
+.collage.is-in .print { opacity: 1; transform: rotate(var(--r)); }
+.collage .print img { display: block; width: 100%; height: auto; aspect-ratio: var(--ar); object-fit: cover; }
+.collage .print::before {
+  content: ""; position: absolute; top: -9px; left: 50%; width: 34%; height: 18px; z-index: 1;
+  background: var(--tape); transform: translateX(-50%) rotate(var(--tr));
+  clip-path: polygon(0 0, 3% 25%, 0 50%, 3% 75%, 0 100%, 100% 100%, 97% 75%, 100% 50%, 97% 25%, 100% 0);
+}
+@media (hover: hover) {
+  .collage.is-in .print:hover { z-index: 10; transform: rotate(0deg) scale(1.04); transition-delay: 0s; box-shadow: 0 2px 4px rgba(0,0,0,.25), 0 22px 40px rgba(0,0,0,.45); }
+}
+.collage-note {
+  position: absolute; left: -2%; bottom: 4%; z-index: 9;
+  background: var(--tape); color: var(--sticker-ink);
+  font-family: var(--hand); font-size: clamp(20px, 2.2vw, 28px); line-height: 1; white-space: nowrap; -webkit-text-stroke: .7px currentColor;
+  padding: 9px 20px 7px; transform: rotate(-5deg); filter: drop-shadow(0 2px 3px rgba(0,0,0,.2));
+  clip-path: polygon(0 0, 2% 14%, 0 28%, 2.2% 42%, 0 56%, 2% 70%, 0 84%, 1.6% 100%, 98.4% 100%, 100% 86%, 98% 72%, 100% 58%, 97.8% 44%, 100% 30%, 98% 16%, 100% 0);
+}
