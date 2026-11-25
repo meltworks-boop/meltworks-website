@@ -28,6 +28,13 @@
     items.forEach((el) => el.classList.add("is-in"));
   }
 
+  // Printed logo: skip straight to the finished shape for reduced motion
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll(".mw-logo").forEach((svg) => {
+      if (svg.setCurrentTime) { svg.setCurrentTime(4.5); svg.pauseAnimations(); }
+    });
+  }
+
   // Shop filters (cards carry data-cat="home desk ...")
   document.querySelectorAll("[data-filter]").forEach((chip) => {
     chip.addEventListener("click", () => {
