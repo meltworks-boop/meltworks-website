@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("mw-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+<title>Contact · Meltworks.studio</title>
+<meta name="description" content="Contact Meltworks.studio for orders and custom work.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="index.html" aria-label="Meltworks.studio home"><svg viewBox="0 0 280 124" fill="currentColor" aria-hidden="true"><path d="M10 62 C20 45 50 22 72 10 C88 2 100 6 112 14 C122 20 132 27 140 27 C148 27 158 20 168 14 C180 6 192 2 208 10 C230 22 260 45 270 62 C276 72 270 84 258 88 C248 91 240 84 228 86 C210 90 175 116 140 118 C105 116 70 90 52 86 C40 84 32 91 22 88 C10 84 4 72 10 62 Z"/></svg><span><b>Meltworks</b><span>.studio</span></span></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav"><a href="shop.html">Shop</a><a href="about.html">Studio</a><a href="index.html#process">Process</a><a href="contact.html" aria-current="page">Contact</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="page-head">
+  <div class="container"><span class="eyebrow">contact</span><h1>Say hello.</h1><p class="lede">Orders, custom pieces, collaborations, or just a question.</p></div>
+</section>
+<section class="section--light wrap-light">
+<div class="container split" style="align-items:start">
+  <div>
+    <div class="contact-list">
+      <div><span class="eyebrow">email</span><a href="#">[email to add]</a></div>
+      <div><span class="eyebrow">instagram</span><a href="#">[@handle to add]</a></div>
+      <div><span class="eyebrow">based in</span><p style="font-size:19px">[City]</p></div>
+    </div>
+  </div>
+  <!-- Static site: wire this to a form service (Formspree / Netlify Forms) or swap for a mailto link -->
+  <form class="form" action="#" method="post">
+    <div class="form-row">
+      <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name"></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
+    </div>
+    <div class="field"><label for="topic">I'm writing about</label>
+      <select id="topic" name="topic"><option>An order</option><option>A custom piece</option><option>A collaboration</option><option>Something else</option></select></div>
+    <div class="field"><label for="msg">Message</label><textarea id="msg" name="message"></textarea></div>
+    <div><button class="btn" type="submit">Send message</button></div>
+  </form>
+</div>
+</section>
+<section class="section cta cta--compact" style="--cta-pad: 86px">
+  <div class="container reveal">
+    <div>
+    <span class="eyebrow">the collection</span>
+    <h2 style="margin-top:18px">Not ready to write yet?</h2>
+    <p class="lede">See what's in the studio first.</p>
+    </div>
+    <div class="btn-row"><a class="btn" href="shop.html">Shop the objects</a></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="wordmark" href="index.html"><svg viewBox="0 0 280 124" fill="currentColor" aria-hidden="true"><path d="M10 62 C20 45 50 22 72 10 C88 2 100 6 112 14 C122 20 132 27 140 27 C148 27 158 20 168 14 C180 6 192 2 208 10 C230 22 260 45 270 62 C276 72 270 84 258 88 C248 91 240 84 228 86 C210 90 175 116 140 118 C105 116 70 90 52 86 C40 84 32 91 22 88 C10 84 4 72 10 62 Z"/></svg><span><b>Meltworks</b><span>.studio</span></span></a>
+        <p class="tagline">ideas take shape</p>
+      </div>
+      <div class="footer-col"><h4>shop</h4><a href="shop.html">All objects</a><a href="shop.html">Home</a><a href="shop.html">Desk</a><a href="shop.html">Light</a></div>
+      <div class="footer-col"><h4>studio</h4><a href="about.html">About</a><a href="index.html#process">Process</a><a href="contact.html">Custom work</a></div>
+      <div class="footer-col"><h4>say hello</h4><a href="contact.html">Contact</a><a href="#" aria-label="Instagram (link to add)">Instagram</a><a href="#">Email</a></div>
+    </div>
+    <div class="footer-word" aria-hidden="true">meltworks</div>
+    <div class="footer-bottom"><span>© <span data-year>2026</span> Meltworks.studio</span><span class="theme-switch" role="group" aria-label="Colour theme"><button type="button" data-theme-set="dark">Ember</button><button type="button" data-theme-set="light">Chalk</button></span><span>Designed &amp; printed in small batches</span></div>
+  </div>
+</footer>
+<script src="js/main.js?v=4"></script>
+</body>
+</html>
